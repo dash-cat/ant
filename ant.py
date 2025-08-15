@@ -5,14 +5,15 @@ START_X, START_Y, LIMIT = 1000, 1000, 25
 _sd_cache = {0: 0}
 
 def sdig(n):
-    n = abs(n)
-    if n in _sd_cache:
-        return _sd_cache[n]
+    n0 = abs(n)
+    if n0 in _sd_cache:
+        return _sd_cache[n0]
     s = 0
-    while n:
-        s += n % 10
-        n //= 10
-    _sd_cache[n] = s
+    x = n0
+    while x:
+        s += x % 10
+        x //= 10
+    _sd_cache[n0] = s
     return s
 
 def solve():
